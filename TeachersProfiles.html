@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nellmapius Primary School</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+        }
+
+        /* Navigation Bar */
+        header {
+            background-color: #050c75;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            height: 50px;
+            width: auto;
+            margin-right: 1rem;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #f0ed5f;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(218, 194, 62, 0.7), rgba(30, 60, 114, 0.7)), 
+                        url('school-kids-assembly.jpg') center/cover no-repeat;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-top: 60px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        .btn {
+            background-color: #080322;
+            color: #a8a608;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+            display: inline-block;
+            margin: 0 10px;
+        }
+
+        .btn:hover {
+            background-color: #05021a;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #f8f9fa;
+        }
+
+        .features h2 {
+            text-align: center;
+            color: #11110d;
+            margin-bottom: 3rem;
+            font-size: 2.5rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-card h3 {
+            color: #1b1b16;
+            margin-bottom: 1rem;
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        /* About Section */
+        .about {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+        }
+
+        .about h2 {
+            color: #11110f;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+        }
+
+        .about p {
+            color: #333;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #fce516;
+            color: rgb(17, 16, 16);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+
+            .features h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <header>
+        <nav>
+            <img src="images/logo.jpg" alt="Nellmapius Primary School Logo" class="logo" style="height: 100px; width: auto;">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html">About</a></li>
+                <li><a href="index.html">Programs</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Teachers Profile Section -->
+    <section class="teachers-section">
+        <div class="teachers-container">
+            <h2 class="section-title">Meet Our Amazing Teachers!</h2>
+            <div class="teachers-grid">
+                
+                <!-- Teacher 1 -->
+                <div class="teacher-card">
+                    <div class="teacher-image">
+                        <img src="images/new punkidh.png" alt="Mrs. Sarah Johnson">
+                        <div class="teacher-overlay">
+                            <div class="fun-fact">🌟 Fun Teacher Alert! 🌟</div>
+                        </div>
+                    </div>
+                    <div class="teacher-info">
+                        <h3 class="teacher-name">Mrs. Sarah Johnson</h3>
+                        <div class="teacher-details">
+                            <span class="grade-badge">Grade 1 & 2</span>
+                            <span class="years-badge">8 Years at NPS</span>
+                        </div>
+                        <p class="teacher-quote">"Learning is an adventure! 🚀"</p>
+                        <div class="teacher-achievements">
+                            <span class="achievement">📚 Reading Champion</span>
+                            <span class="achievement">🎨 Art Specialist</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Teacher 2 -->
+                <div class="teacher-card">
+                    <div class="teacher-image">
+                        <img src="images/teacher2.jpg" alt="Mr. David Thompson">
+                        <div class="teacher-overlay">
+                            <div class="fun-fact">🧮 Math Wizard! 🧮</div>
+                        </div>
+                    </div>
+                    <div class="teacher-info">
+                        <h3 class="teacher-name">Mr. David Thompson</h3>
+                        <div class="teacher-details">
+                            <span class="grade-badge">Grade 3 & 4</span>
+                            <span class="years-badge">12 Years at NPS</span>
+                        </div>
+                        <p class="teacher-quote">"Math is everywhere! 🔢✨"</p>
+                        <div class="teacher-achievements">
+                            <span class="achievement">🏆 Science Fair Winner</span>
+                            <span class="achievement">⚽ Soccer Coach</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Teacher 3 -->
+                <div class="teacher-card">
+                    <div class="teacher-image">
+                        <img src="images/teacher3.jpg" alt="Ms. Emily Rodriguez">
+                        <div class="teacher-overlay">
+                            <div class="fun-fact">🌍 Explorer Teacher! 🌍</div>
+                        </div>
+                    </div>
+                    <div class="teacher-info">
+                        <h3 class="teacher-name">Ms. Emily Rodriguez</h3>
+                        <div class="teacher-details">
+                            <span class="grade-badge">Grade 5 & 6</span>
+                            <span class="years-badge">6 Years at NPS</span>
+                        </div>
+                        <p class="teacher-quote">"Discover the world through learning! 🌟"</p>
+                        <div class="teacher-achievements">
+                            <span class="achievement">🎭 Drama Club Leader</span>
+                            <span class="achievement">📖 Storytelling Master</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Teacher 4 -->
+                <div class="teacher-card">
+                    <div class="teacher-image">
+                        <img src="images/teacher4.jpg" alt="Mrs. Amanda Wilson">
+                        <div class="teacher-overlay">
+                            <div class="fun-fact">🎵 Music Maestro! 🎵</div>
+                        </div>
+                    </div>
+                    <div class="teacher-info">
+                        <h3 class="teacher-name">Mrs. Amanda Wilson</h3>
+                        <div class="teacher-details">
+                            <span class="grade-badge">Grade 7</span>
+                            <span class="years-badge">15 Years at NPS</span>
+                        </div>
+                        <p class="teacher-quote">"Music makes everything better! 🎶"</p>
+                        <div class="teacher-achievements">
+                            <span class="achievement">🎹 Piano Expert</span>
+                            <span class="achievement">🏅 Choir Director</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <style>
+        /* Teachers Section Styles */
+        .teachers-section {
+            padding: 4rem 2rem;
+            margin-top: 80px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .teachers-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="10" cy="10" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="30" cy="30" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="50" cy="20" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="70" cy="40" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="90" cy="15" r="1" fill="rgba(255,255,255,0.1)"/></svg>') repeat;
+            animation: float 20s infinite linear;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px) translateX(0px); }
+            25% { transform: translateY(-20px) translateX(10px); }
+            50% { transform: translateY(0px) translateX(-10px); }
+            75% { transform: translateY(20px) translateX(5px); }
+            100% { transform: translateY(0px) translateX(0px); }
+        }
+
+        .teachers-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-title {
+            text-align: center;
+            color: white;
+            font-size: 3rem;
+            margin-bottom: 3rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        .teachers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(10px, 10fr));
+            gap: 2rem;
+        }
+
+        .teacher-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            animation: slideIn 0.6s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .teacher-card:hover {
+            transform: translateY(-10px) rotate(2deg);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        .teacher-image {
+            position: relative;
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .teacher-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .teacher-card:hover .teacher-image img {
+            transform: scale(1.1);
+        }
+
+        .teacher-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(255,193,7,0.9), rgba(255,87,34,0.9));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .teacher-card:hover .teacher-overlay {
+            opacity: 1;
+        }
+
+        .fun-fact {
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+            text-align: center;
+            padding: 1rem;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .teacher-info {
+            padding: 1.5rem;
+        }
+
+        .teacher-name {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 1rem;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .teacher-details {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .grade-badge, .years-badge {
+            background: linear-gradient(45deg, #FF6B6B, #4ECDC4);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            text-align: center;
+            flex: 1;
+            min-width: 120px;
+        }
+
+        .teacher-quote {
+            font-style: italic;
+            color: #666;
+            text-align: center;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bold;
+        }
+
+        .teacher-achievements {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+        }
+
+        .achievement {
+            background: #f0f0f0;
+            color: #333;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            border: 2px solid #ddd;
+            transition: all 0.3s ease;
+        }
+
+        .achievement:hover {
+            background: #ffc107;
+            color: white;
+            transform: scale(1.1);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .teacher-details {
+                flex-direction: column;
+            }
+            
+            .grade-badge, .years-badge {
+                min-width: auto;
+            }
+            
+            .teachers-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+
+    <!-- Footer -->
+    <style>
+    footer {
+        background: url('images/girls\ morning.jpg') center/cover no-repeat;
+        color: white;
+        text-align: center;
+        padding: 2rem;
+        margin-top: 3rem;
+    }
+    </style>
+    <footer id="contact">
+        <div style="background-color: rgba(255, 255, 255, 0.8); padding: 2rem; border-radius: 8px; display: inline-block;">
+            <p style="color: black; font-weight: bold;">&copy; 2025 Nellmapius Primary School. All rights reserved.</p>
+            <p style="color: black; font-weight: bold;">Contact: nellmapiusprimaryschool@gmail.com | Phone: 012 803 0513</p>
+            <p style="color: black; font-weight: bold;">Address: 664 Loeriesfontein Crescent, Nellmapius Ext 1, Pretoria, South Africa, 0162</p>
+        </div>
+    </footer>
+</body>
+</html>

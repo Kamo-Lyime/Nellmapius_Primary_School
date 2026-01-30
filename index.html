@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nellmapius Primary School</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #f7ec88 0%, #d8ee59 100%);
+        }
+
+        /* Navigation Bar */
+        header {
+            background-color: #050c75;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+
+        .logo {
+            height: 50px;
+            width: auto;
+            margin-right: 0.7rem;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffc107;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(218, 194, 62, 0.7), rgba(30, 60, 114, 0.7)), 
+                        url('school-kids-assembly.jpg') center/cover no-repeat;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-top: 60px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        .btn {
+            background-color: #ffc107;
+            color: #a8a608;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+            display: inline-block;
+            margin: 0 10px;
+        }
+
+        .btn:hover {
+            background-color: #ffb300;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #f8f9fa;
+        }
+
+        .features h2 {
+            text-align: center;
+            color: #11110d;
+            margin-bottom: 3rem;
+            font-size: 2.5rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-card h3 {
+            color: #1b1b16;
+            margin-bottom: 1rem;
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        /* About Section */
+        .about {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+        }
+
+        .about h2 {
+            color: #11110f;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+        }
+
+        .about p {
+            color: #333;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #fce516;
+            color: rgb(17, 16, 16);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+
+            .features h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <header>
+        <nav>
+            <img src="images/logo.jpg" alt="Nellmapius Primary School Logo" class="logo" style="height: 100px; width: auto;">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#programs">Programs</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+           
+            <h1>Welcome to Nellmapius Primary School</h1>
+            <p>Believe, Trust and Conquer.</p>
+            <a href="TeachersProfiles.html" class="btn">Teachers Profiles</a>
+            <a href="NewsLetters.html" class="btn">News Letters</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <style>
+    .features {
+        background: 
+                    url('images/school kids assembly.jpg') center/cover no-repeat;
+    }
+    </style>
+    <section class="features" id="programs">
+        <h2>Our Commitment to Excellence</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">📚</div>
+                <h3>Quality Education</h3>
+                <p>Comprehensive curriculum designed to develop critical thinking and creativity.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🏆</div>
+                <h3>Character Development</h3>
+                <p>Building confident, responsible, and well-rounded individuals.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">⚽</div>
+                <h3>Sports & Activities</h3>
+                <p>Encouraging participation in sports and extracurricular activities.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <style>
+    .about {
+        background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), 
+                    url('images/assembly 2.jpg') center/cover no-repeat;
+    }
+    </style>
+    <section class="about" id="about">
+        <h2>About Nellmapius Primary School</h2>
+        <p>
+            Nellmapius Primary School is dedicated to providing quality education and fostering 
+            a nurturing environment where every child can thrive academically, socially, and emotionally.
+        </p>
+        <p>
+            Our mission is to empower students with knowledge, skills, and values that will serve 
+            them well in their future endeavors.
+        </p>
+    </section>
+
+    <!-- Footer -->
+    <style>
+    footer {
+        background: url('images/girls\ morning.jpg') center/cover no-repeat;
+        color: white;
+        text-align: center;
+        padding: 2rem;
+        margin-top: 3rem;
+    }
+    </style>
+    <footer id="contact">
+        <div style="background-color: rgba(255, 255, 255, 0.8); padding: 2rem; border-radius: 8px; display: inline-block;">
+            <p style="color: black; font-weight: bold;">&copy; 2025 Nellmapius Primary School. All rights reserved.</p>
+            <p style="color: black; font-weight: bold;">Contact: nellmapiusprimaryschool@gmail.com | Phone: 012 803 0513</p>
+            <p style="color: black; font-weight: bold;">Address: 664 Loeriesfontein Crescent, Nellmapius Ext 1, Pretoria, South Africa, 0162</p>
+        </div>
+    </footer>
+</body>
+</html>

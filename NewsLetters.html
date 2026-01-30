@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Newsletters - Nellmapius Primary School</title>
+    <style>
+         /* Navigation Bar */
+        header {
+            background-color: #050c75;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            gap: 0.5rem;
+        }
+
+        .logo {
+            height: 50px;
+            width: auto;
+            margin-right: -0rem;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffc107;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #f7ec88 0%, #d8ee59 100%);
+            min-height: 100vh;
+            padding: 0;
+            padding-top: 150px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            color: white;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .newsletter-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .newsletter-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .newsletter-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+        }
+
+        .newsletter-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4);
+        }
+
+        .newsletter-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 15px;
+            margin-bottom: 15px;
+            border: 3px solid #f0f0f0;
+        }
+
+        .newsletter-title {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .newsletter-date {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .newsletter-description {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .view-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .view-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+        }
+
+        .modal-content {
+            position: relative;
+            margin: 2% auto;
+            width: 90%;
+            max-width: 1200px;
+            max-height: 90vh;
+            background: white;
+            border-radius: 20px;
+            overflow: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-image {
+            width: 100%;
+            height: auto;
+            max-height: 90vh;
+            display: block;
+            object-fit: contain;
+        }
+
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 25px;
+            color: white;
+            font-size: 35px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 1001;
+            background: rgba(0,0,0,0.7);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .close:hover {
+            background: rgba(255,0,0,0.7);
+        }
+
+        nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            
+            .newsletter-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <header>
+        <nav>
+            <img src="images/logo.jpg" alt="Nellmapius Primary School Logo" class="logo" style="height: 100px; width: auto;">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html">About</a></li>
+                <li><a href="index.html">Programs</a></li>
+                <li><a href="index.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="container">
+        <div class="header">
+            <h1>📰 School Newsletters</h1>
+            <p>Stay connected with all the latest news and updates from our school community!</p>
+        </div>
+
+        <div class="newsletter-grid">
+            <div class="newsletter-card" onclick="openModal('modal1')">
+                <img src="images/news1.jpg" alt="Newsletter" class="newsletter-image" style="width: 100%; height: auto; max-width: 100%; object-fit: contain;">
+                <h3 class="newsletter-title">Latest School Newsletter</h3>
+                <p class="newsletter-date">📅 December 2024</p>
+                <p class="newsletter-description">
+                    Discover the latest happenings at our school! This edition features student achievements, 
+                    upcoming events, and important announcements for parents and families.
+                </p>
+                <button class="view-btn">🔍 View Full Newsletter</button>
+            </div>
+
+            <!-- Add more newsletter cards as needed -->
+            <div class="newsletter-card">
+                <div style="height: 300px; background: linear-gradient(135deg, #ffeaa7, #fab1a0); border-radius: 15px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px;">
+                    <span style="font-size: 3rem;">📰</span>
+                </div>
+                <h3 class="newsletter-title">Coming Soon</h3>
+                <p class="newsletter-date">📅 Next Edition</p>
+                <p class="newsletter-description">
+                    Our next newsletter is currently being prepared with exciting updates and stories from our school community.
+                </p>
+                <button class="view-btn" disabled style="opacity: 0.6;">Coming Soon</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="modal1" class="modal">
+        <span class="close" onclick="closeModal('modal1')">&times;</span>
+        <div class="modal-content">
+            <img src="images/news1.jpg" alt="Newsletter Full View" class="modal-image">
+        </div>
+    </div>
+
+    <script>
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modals = document.getElementsByClassName('modal');
+            for (let i = 0; i < modals.length; i++) {
+                if (event.target === modals[i]) {
+                    modals[i].style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            }
+        }
+    </script>
+</body>
+</html>
